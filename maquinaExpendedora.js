@@ -1,7 +1,6 @@
-let recompensas = document.querySelector("#recompensas").value
-
-
 function elegirRecompensa() {
+    let recompensas = document.querySelector("#recompensas").value
+
     //Esto nos permite separar el texto de todas las recompensas en lineas donde se encuentra cada recompensa por separado
     const lineas = recompensas.split("\n").filter(linea => linea.trim() !== "")
 
