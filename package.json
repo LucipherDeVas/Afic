@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "next": "^15.4.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "todomvc-app-css": "^2.4.3",
+    "typescript": "^5.8.3"
+  },
+  "name": "afic",
+  "version": "1.0.0",
+  "main": "maquinaExpendedora.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucipherDeVas/Afic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucipherDeVas/Afic/issues"
+  },
+  "homepage": "https://github.com/LucipherDeVas/Afic#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "24.0.15",
+    "@types/react": "19.1.8"
+  }
+}

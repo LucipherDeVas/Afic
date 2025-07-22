@@ -1,0 +1,57 @@
+proyecto/
+├── public/                   # Archivos públicos (logo, imágenes, etc.)
+├── src/
+│   ├── pages/                # Páginas y rutas API
+│   │   ├── _app.tsx          # Componente raíz de la aplicación
+│   │   ├── index.tsx         # Página principal
+│   │   ├── login.tsx         # Página de login
+│   │   ├── registro.tsx      # Página de registro
+│   │   └── api/              # API backend (Next.js API Routes)
+│   │       ├── auth/         # Endpoints: login, registro
+│   │       ├── materiales/   # Endpoints: subir/ver materiales
+│   │       └── usuarios/     # Endpoints: obtener datos del usuario
+│   ├── components/           # Componentes visuales reutilizables
+│   │   ├── Navbar.tsx
+│   │   ├── Footer.tsx
+│   │   └── MaterialCard.tsx
+│   ├── prisma/               # Base de datos (Prisma)
+│   │   ├── schema.prisma     # Definición de tablas
+│   │   └── client.ts         # Configuración del cliente Prisma
+│   ├── styles/               # Archivos CSS o configuración Tailwind
+│   └── lib/                  # Funciones auxiliares (ej: auth helpers)
+├── .env                      # Variables de entorno (DB URL, Cloudinary)
+├── package.json              # Dependencias y scripts
+├── next.config.js            # Configuración Next.js
+└── README.md                 # Explicación del proyecto
+
+
+npm install todomvc-app-css
+# Estructura del proyecto Next.js con TypeScript
+npm install next react react-dom typescript
+
+
+# comentarios y explicaciones -----------------------------------------------------------------------------------------------------
+# - `public/`: Contiene archivos estáticos accesibles públicamente.
+# - `src/pages/`: Contiene las páginas de la aplicación y las rutas API.
+    #   - `_app.tsx`: Componente raíz que envuelve todas las páginas. 
+                    #Sirve para inicializar la aplicación en terminos mas especificos sirve para .
+#   - `index.tsx`: Página principal de la aplicación.
+#   - `login.tsx`: Página de inicio de sesión.
+#   - `registro.tsx`: Página de registro de usuarios.
+#   - `api/`: Contiene las rutas API para manejar autenticación, materiales y usuarios.
+#     - `auth/`: Endpoints para login y registro de usuarios.
+#     - `materiales/`: Endpoints para subir y ver materiales.
+#     - `usuarios/`: Endpoints para obtener datos del usuario.
+#   - `components/`: Contiene componentes reutilizables para la interfaz de usuario.
+#     - `Navbar.tsx`: Componente de navegación.
+#     - `Footer.tsx`: Componente de pie de página.
+#     - `MaterialCard.tsx`: Componente para mostrar materiales.
+# - `src/prisma/`: Contiene la configuración de la base de datos usando Prisma.
+#   - `schema.prisma`: Define las tablas y relaciones de la base de datos.
+#   - `client.ts`: Configuración del cliente Prisma para interactuar con la base de datos.
+# - `src/styles/`: Contiene archivos de estilos CSS o configuración de Tailwind CSS 
+# - `src/lib/`: Contiene funciones auxiliares y helpers, como autenticación.
+# - `.env`: Archivo para variables de entorno, como la URL de la base de datos
+# - `package.json`: Contiene las dependencias del proyecto y scripts de ejecución.
+# - `next.config.js`: Configuración específica de Next.js.
+# - `README.md`: Documentación del proyecto y guía de uso.
