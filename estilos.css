@@ -1,35 +1,64 @@
 body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #1a1a1a;
-      color: #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 20px;
-    }
-    button {
-      background: #00b894;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      color: white;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-bottom: 30px;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #019270;
-    }
-    .recompensa {
-      font-size: 22px;
-      background: #2d3436;
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 500px;
-    }
+  font-family: 'Segoe UI', sans-serif;
+  background: #1a1a1a;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;   /* Espacio desde arriba */
+  min-height: 100vh;   /* Altura mínima, no fija */
+  box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+button {
+    background: #00b894;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: background 0.3s;
+}
+button:hover {
+    background: #019270;
+}
+.recompensa {
+    font-size: 22px;
+    background: #2d3436;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 500px;
+}
+textarea {
+    font-size: 15px;
+    background: #2d3436;
+    color: #dfe6e9;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 100%;
+    width: 500px;
+    height: 500px;
+    border: none;
+    resize: none;              
+    overflow-y: auto;          
+    scrollbar-width: none;     
+}
+img {
+  max-width: 250px;       /* Tamaño máximo ancho */
+  width: 100%;            /* Que se adapte al contenedor */
+  height: auto;           /* Mantener proporción */
+  transition: transform 0.3s ease;  /* Transición suave */
+  cursor: pointer;        /* Cambia el cursor al pasar encima */
+  display: block;         /* Elimina espacio abajo */
+  margin: 10px auto;      /* Centra y separa un poco */
+}
+
+img:hover {
+  transform: scale(1.05); /* Agranda un 5% */
+}
