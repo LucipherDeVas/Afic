@@ -9,13 +9,36 @@
 </head>
 
 <body>
-    <h1>🎁 Máquina de Recompensas</h1>
+    <nav id="navegador">
+        <div class="contenedornav">
+            <div id="logo-titulo">
+                <img src="imagenes/logo.png" alt="Logo del sitio" id="logo">
+            </div>
+            <ul id="navegador-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="calcularNota.html">calcularNota</a></li>
+                <li><a href="comidaUDP.html">Comida UDP</a></li>
+                <li><a href="zonaEstudio">Zona de estudio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>🧠 Máquina de Recompensas 📚</h1>
 
 
-    <img src="img/maquinaExpendedora.png" alt="">
+    <img src="img/maquinaExpendedora.png" alt="" id="maquinaExpendedora">
 
-    <button onclick="elegirRecompensa()">Girar la manilla</button>
-    <div class="recompensa" id="resultado">Haz clic para recibir una recompensa.</div>
+    <div class="contenedor-boton-imagen">
+        <button onclick="elegirRecompensa()">Girar la manilla</button>
+        <div class="imagen-cuadro">
+            <img src="img/moneda.png" alt="Premio" />
+            <h4 id="monedas">2</h4>
+        </div>
+    </div>
+
+    <div class="recompensa" id="resultado">Gira la manilla para obtener una recompensa</div>
 
 
 

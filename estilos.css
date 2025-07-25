@@ -1,19 +1,22 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #1a1a1a;
-  color: #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding-top: 50px;   /* Espacio desde arriba */
-  min-height: 100vh;   /* Altura mínima, no fija */
-  box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    background: #1a1a1a;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    /* Espacio desde arriba */
+    min-height: 100vh;
+    /* Altura mínima, no fija */
+    box-sizing: border-box;
 }
 
 h1 {
     margin-bottom: 20px;
 }
+
 button {
     background: #00b894;
     border: none;
@@ -25,9 +28,11 @@ button {
     margin-bottom: 30px;
     transition: background 0.3s;
 }
+
 button:hover {
     background: #019270;
 }
+
 .recompensa {
     font-size: 22px;
     background: #2d3436;
@@ -35,6 +40,7 @@ button:hover {
     border-radius: 12px;
     max-width: 500px;
 }
+
 textarea {
     font-size: 15px;
     background: #2d3436;
@@ -45,20 +51,102 @@ textarea {
     width: 500px;
     height: 500px;
     border: none;
-    resize: none;              
-    overflow-y: auto;          
-    scrollbar-width: none;     
-}
-img {
-  max-width: 250px;       /* Tamaño máximo ancho */
-  width: 100%;            /* Que se adapte al contenedor */
-  height: auto;           /* Mantener proporción */
-  transition: transform 0.3s ease;  /* Transición suave */
-  cursor: pointer;        /* Cambia el cursor al pasar encima */
-  display: block;         /* Elimina espacio abajo */
-  margin: 10px auto;      /* Centra y separa un poco */
+    resize: none;
+    overflow-y: auto;
+    scrollbar-width: none;
 }
 
-img:hover {
-  transform: scale(1.05); /* Agranda un 5% */
+#maquinaExpendedora{
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 10px auto;
+}
+
+#maquinaExpendedora:hover {
+    transform: scale(1.05);
+}
+
+#navegador {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 10px;
+}
+
+.contenedornav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+#logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+}
+
+#navegador-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#navegador-links li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#navegador-links li a:hover {
+    background-color: #00b894;
+    color: #1f1f1f;
+}
+
+.contenedor-boton-imagen {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.imagen-cuadro {
+    width: 100px;
+    height: 100px;
+    background-color: #2d3436;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+
+}
+
+.imagen-cuadro img {
+    max-width: 75%;
+    max-height: 75%;
+}
+
+.imagen-cuadro h4{
+    margin: 0;
 }
