@@ -15,6 +15,7 @@ body {
 
 h1 {
     margin-bottom: 20px;
+    font-size: 35px;
 }
 
 button {
@@ -56,7 +57,7 @@ textarea {
     scrollbar-width: none;
 }
 
-#maquinaExpendedora{
+#maquinaExpendedora {
     max-width: 450px;
     width: 100%;
     height: auto;
@@ -147,17 +148,19 @@ textarea {
     max-height: 75%;
 }
 
-.imagen-cuadro h4{
+.imagen-cuadro h4 {
     margin: 0;
 }
 
 
 .misiones {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px; /* espacio entre tarjetas */
-  max-width: 1000px; /* opcional para limitar ancho */
-  margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    /* espacio entre tarjetas */
+    max-width: 1000px;
+    /* opcional para limitar ancho */
+    margin: auto;
 }
 
 
@@ -168,147 +171,183 @@ textarea {
     border-radius: 12px;
     color: #f0f0f0;
     font-size: 16px;
-    box-shadow: 0 0 10px rgba(0, 184, 68, 0.5);
+    box-shadow: 0 0 20px rgba(0, 184, 68, 0.5);
     text-align: center;
     transition: transform 0.3s ease;
     cursor: pointer;
     display: flex;
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
     flex-direction: column;
 }
+
 .nivel2 {
     background: #2d3436;
     padding: 20px;
     border-radius: 12px;
     color: #f0f0f0;
     font-size: 16px;
-    box-shadow: 0 0 10px rgba(166, 184, 0, 0.5);
+    box-shadow: 0 0 20px rgba(166, 184, 0, 0.5);
     text-align: center;
     transition: transform 0.3s ease;
     cursor: pointer;
     display: flex;
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
     flex-direction: column;
 }
+
 .nivel3 {
     background: #2d3436;
     padding: 20px;
     border-radius: 12px;
     color: #f0f0f0;
     font-size: 16px;
-    box-shadow: 0 0 10px rgba(184, 138, 0, 0.5);
+    box-shadow: 0 0 20px rgba(184, 138, 0, 0.5);
     text-align: center;
     transition: transform 0.3s ease;
     cursor: pointer;
     display: flex;
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
     flex-direction: column;
 }
+
 .nivel4 {
     background: #2d3436;
     padding: 20px;
     border-radius: 12px;
     color: #f0f0f0;
     font-size: 16px;
-    box-shadow: 0 0 10px rgba(184, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(184, 0, 0, 0.5);
     text-align: center;
     transition: transform 0.3s ease;
     cursor: pointer;
     display: flex;
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
     flex-direction: column;
 }
+
 .nivel5 {
     background: #2d3436;
     padding: 20px;
     border-radius: 12px;
     color: #f0f0f0;
     font-size: 16px;
-    box-shadow: 0 0 10px rgba(184, 0, 178, 0.5);
+    box-shadow: 0 0 20px rgba(184, 0, 178, 0.5);
     text-align: center;
     transition: transform 0.3s ease;
     cursor: pointer;
     display: flex;
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
     flex-direction: column;
 }
 
 .nivel1:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgb(0, 184, 68);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(0, 184, 68);
 }
 
 .nivel2:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgb(166, 184, 0);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(166, 184, 0);
 }
 
 .nivel3:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgb(184, 138, 0);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(184, 138, 0);
 }
 
 .nivel4:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgb(184, 0, 0);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(184, 0, 0);
 }
+
 .nivel5:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgb(149, 0, 144);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(149, 0, 144);
 }
 
 .nivel1 h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .nivel2 h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .nivel3 h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .nivel4 h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .nivel5 h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .nivel1 p {
-  margin: 5px 0;
+    margin: 5px 0;
 }
 
 .nivel2 p {
-  margin: 5px 0;
+    margin: 5px 0;
 }
 
 .nivel3 p {
-  margin: 5px 0;
+    margin: 5px 0;
 }
 
 .nivel4 p {
-  margin: 5px 0;
+    margin: 5px 0;
 }
 
 .nivel5 p {
-  margin: 5px 0;
+    margin: 5px 0;
 }
 
+#tiempo1 {
+    margin-top: 100px;
+}
+
+#tiempo2 {
+    margin-top: 50px;
+}
+
+.botones-temporizador {
+    display: flex;
+    gap: 35px;
+    margin-top: 75px;
+}
+
+.tiempo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
