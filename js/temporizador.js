@@ -56,6 +56,7 @@ let parar = true
 //Funcion que permite poner en marcha el temporizador
 function iniciar() {
     parar = false
+    const sesion = document.getElementById("tiempo2").innerHTML
     if (iniciado === false) {
         iniciado = true
         intervalo = setInterval(() => {
@@ -84,7 +85,8 @@ function iniciar() {
                             if (horas < 0) {
                                 iniciado = false
                                 parar = true
-                                clearInterval(intervalo);
+                                recibirRecompensa(sesion)
+                                clearInterval(intervalo)
                             }
                         }
 
@@ -113,4 +115,29 @@ function iniciar() {
 //funcion para pausar
 function pausa() {
     parar = true
+}
+
+localStorage.setItem("token", 0)
+
+function recibirRecompensa(sesion) {
+
+    cantidadToken = parseInt(localStorage.getItem("token"))
+    
+    if (sesion === "01:00:00") {
+        cantidadToken += 13
+    }
+    else if (sesion === "00:45:00") {
+        cantidadToken += 10
+    }
+    else if (sesion === "00:30:00") {
+        cantidadToken += 8
+    }
+    else if (sesion === "00:25:00") {
+        cantidadToken += 6
+    }
+    else if (sesion === "00:15:00") {
+        cantidadToken += 3
+    }
+
+    localStorage.setItem("token", cantidadToken)
 }
