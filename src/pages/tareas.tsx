@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Todos } from '../componentes/Todos'
+import { title } from "process";
 
 
 // cuando hablamos de "todos" nos referimos a una lista de tareas pendientes o "todo" para una tarea
@@ -19,7 +20,13 @@ const mockTodos = [ // esto sirve para simular una lista de tareas
         id: '3',
         title: 'Deploy to Vercel',
         completed: false,
+    },
+    {
+        id: '4',
+        title: "Echar a todos los klos de la AFIC",
+        completed: false,   
     }
+
 ]
 
 
