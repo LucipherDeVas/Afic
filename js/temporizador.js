@@ -52,14 +52,25 @@ let iniciado = false
 //Variable la cual me permite parar el tiempo
 let parar = true
 
+// variable para ver de cuanto tiempo duro la sesion
+let sesionInicial = null;
 
 //Funcion que permite poner en marcha el temporizador
 function iniciar() {
     parar = false
-    const sesion = document.getElementById("tiempo2").innerHTML
+
+    //revisa si la sesion no fue iniciada lo cual me permite almacenar el tiempo principal
+    if (!sesionInicial) {
+        sesionInicial = document.getElementById("tiempo2").innerHTML;
+    }
+
+    //Esto me permite solamente iniciar una sola vez el temporizador
     if (iniciado === false) {
         iniciado = true
+
+        //Nos crea un intervalo
         intervalo = setInterval(() => {
+
             //Este caso nos permite ver si la variable parar esta activada o no lo que indica que el usuario uso el boton
             if (parar === false) {
                 tiempo = document.getElementById("tiempo2").innerHTML
@@ -75,17 +86,18 @@ function iniciar() {
                 if (horas > 0 || minutos > 0 || segundos > 0) {
                     segundos--
                     if (segundos < 0) {
-                        segundos = 59;
-                        minutos--;
+                        segundos = 59
+                        minutos--
 
                         if (minutos < 0) {
-                            minutos = 59;
-                            horas--;
+                            minutos = 59
+                            horas--
 
                             if (horas < 0) {
                                 iniciado = false
                                 parar = true
-                                recibirRecompensa(sesion)
+                                recibirRecompensa(sesionInicial)
+                                sesionInicial = null
                                 clearInterval(intervalo)
                             }
                         }
@@ -122,7 +134,7 @@ localStorage.setItem("token", 0)
 function recibirRecompensa(sesion) {
 
     cantidadToken = parseInt(localStorage.getItem("token"))
-    
+
     if (sesion === "01:00:00") {
         cantidadToken += 13
     }
