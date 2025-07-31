@@ -5,6 +5,9 @@ interface Props extends TodoType {
 }
 
 
+/* esto sirve para que el componente reciba las propiedades de tipo TodoType y la función onRemoveTodo
+
+*/
 export const Todo: React.FC<Props> = ({ id, title, completed, onRemoveTodo }) => {
     return (
         <div className="view">
