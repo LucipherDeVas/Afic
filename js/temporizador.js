@@ -51,6 +51,7 @@ function enfoque5() {
 let iniciado = false
 //Variable la cual me permite parar el tiempo
 let parar = true
+let contador = 0
 
 // variable para ver de cuanto tiempo duro la sesion
 let sesionInicial = null;
@@ -74,6 +75,7 @@ function iniciar() {
             //Este caso nos permite ver si la variable parar esta activada o no lo que indica que el usuario uso el boton
             if (parar === false) {
                 tiempo = document.getElementById("tiempo2").innerHTML
+                console.log(tiempo)
 
                 let [horas, minutos, segundos] = tiempo.split(':')
 
@@ -88,7 +90,7 @@ function iniciar() {
                     recibirRecompensa(sesionInicial)
                     sesionInicial = null
                     clearInterval(intervalo)
-                    return;
+                    return
                 }
 
                 segundos--

@@ -157,9 +157,7 @@ textarea {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
-    /* espacio entre tarjetas */
     max-width: 1100px;
-    /* opcional para limitar ancho */
     margin: auto;
 }
 
