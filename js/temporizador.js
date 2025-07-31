@@ -82,36 +82,37 @@ function iniciar() {
                 minutos = parseInt(minutos, 10)
                 segundos = parseInt(segundos, 10)
 
-                //Caso borde para que los numeros no sean negativos
-                if (horas > 0 || minutos > 0 || segundos > 0) {
-                    segundos--
-                    if (segundos < 0) {
-                        segundos = 59
-                        minutos--
+                if (segundos === 0 && minutos === 0 && horas === 0) {
+                    iniciado = false
+                    parar = true
+                    recibirRecompensa(sesionInicial)
+                    sesionInicial = null
+                    clearInterval(intervalo)
+                    return;
+                }
 
-                        if (minutos < 0) {
-                            minutos = 59
-                            horas--
+                segundos--
+                contador++
+                fraseMotivadora(contador)
+                if (segundos < 0) {
+                    segundos = 59
+                    minutos--
 
-                            if (horas < 0) {
-                                iniciado = false
-                                parar = true
-                                recibirRecompensa(sesionInicial)
-                                sesionInicial = null
-                                clearInterval(intervalo)
-                            }
-                        }
-
+                    if (minutos < 0) {
+                        minutos = 59
+                        horas--
                     }
 
-                    //Transformar de entero a string
-                    horas = horas.toString().padStart(2, '0')
-                    minutos = minutos.toString().padStart(2, '0')
-                    segundos = segundos.toString().padStart(2, '0')
-
-                    document.getElementById("tiempo2").innerHTML = horas + ":" + minutos + ":" + segundos
-
                 }
+
+                //Transformar de entero a string
+                horas = horas.toString().padStart(2, '0')
+                minutos = minutos.toString().padStart(2, '0')
+                segundos = segundos.toString().padStart(2, '0')
+
+                document.getElementById("tiempo2").innerHTML = horas + ":" + minutos + ":" + segundos
+
+
             }
 
             //El 1000 es porque es 1 seg
@@ -152,4 +153,68 @@ function recibirRecompensa(sesion) {
     }
 
     localStorage.setItem("token", cantidadToken)
+}
+
+function fraseMotivadora(contador) {
+    if (contador % 900 === 0) {
+        const frases = [
+            "La vida es muy simple, pero insistimos en hacerla complicada. – Confucio",
+            "El éxito es ir de fracaso en fracaso sin perder el entusiasmo. – Winston Churchill",
+            "Haz lo que puedas, con lo que tengas, donde estés. – Theodore Roosevelt",
+            "La felicidad no es algo hecho. Proviene de tus propias acciones. – Dalai Lama",
+            "No cuentes los días, haz que los días cuenten. – Muhammad Ali",
+            "Sé el cambio que deseas ver en el mundo. – Mahatma Gandhi",
+            "Nuestra mayor gloria no es no caer nunca, sino levantarnos cada vez que caemos. – Confucio",
+            "No dejes que lo que no puedes hacer interfiera con lo que puedes hacer. – John Wooden",
+            "El futuro pertenece a quienes creen en la belleza de sus sueños. – Eleanor Roosevelt",
+            "Cree que puedes y ya estás a medio camino. – Theodore Roosevelt",
+            "El conocimiento habla, pero la sabiduría escucha. – Jimi Hendrix",
+            "El único modo de hacer un gran trabajo es amar lo que haces. – Steve Jobs",
+            "El genio se compone de un 1% de inspiración y un 99% de transpiración. – Thomas Edison",
+            "Cuando cambias la forma en que miras las cosas, las cosas que miras cambian. – Wayne Dyer",
+            "El que tiene un porqué para vivir puede soportar casi cualquier cómo. – Friedrich Nietzsche",
+            "Solo una cosa convierte en imposible un sueño: el miedo a fracasar. – Paulo Coelho",
+            "La disciplina es el puente entre metas y logros. – Jim Rohn",
+            "Todo lo que puedas imaginar es real. – Pablo Picasso",
+            "No soy producto de mis circunstancias, soy producto de mis decisiones. – Stephen Covey",
+            "Quien en verdad quiere algo, encuentra un camino; quien no, encuentra una excusa. – Proverbio árabe",
+            "Haz de cada día tu obra maestra. – John Wooden",
+            "La suerte es lo que sucede cuando la preparación se encuentra con la oportunidad. – Séneca",
+            "Nunca es demasiado tarde para ser lo que podrías haber sido. – George Eliot",
+            "Vive como si fueras a morir mañana. Aprende como si fueras a vivir para siempre. – Mahatma Gandhi",
+            "El éxito no es la clave de la felicidad. La felicidad es la clave del éxito. – Albert Schweitzer",
+            "La mente es todo. En lo que piensas te conviertes. – Buda",
+            "No hay caminos para la paz, la paz es el camino. – Mahatma Gandhi",
+            "No mires el reloj; haz lo que él hace, sigue adelante. – Sam Levenson",
+            "La adversidad revela el genio, la prosperidad lo oculta. – Horacio",
+            "La voluntad encuentra el camino. – Orison Swett Marden",
+            "Prefiero morir de pasión que de aburrimiento. – Vincent van Gogh",
+            "El que domina a los otros es fuerte; el que se domina a sí mismo es poderoso. – Lao Tsé",
+            "Piensa como un hombre de acción, actúa como un hombre de pensamiento. – Henri Bergson",
+            "Las oportunidades no pasan, las creas. – Chris Grosser",
+            "El éxito consiste en obtener lo que se desea. La felicidad, en disfrutar lo que se obtiene. – Ralph Waldo Emerson",
+            "Cuanto más hacemos, más podemos hacer. – William Hazlitt",
+            "El miedo es el enemigo de la lógica. – Frank Sinatra",
+            "Nadie puede hacerte sentir inferior sin tu consentimiento. – Eleanor Roosevelt",
+            "No hay elevación sin lucha. – Booker T. Washington",
+            "No cuentes los días, haz que los días cuenten. – Muhammad Ali",
+            "Todo parece imposible hasta que se hace. – Nelson Mandela",
+            "No sueñes tu vida, vive tu sueño. – Anónimo",
+            "Solo aquellos que se atreven a tener grandes fracasos terminan logrando grandes éxitos. – Robert F. Kennedy",
+            "El que no está ocupado naciendo, está ocupado muriendo. – Bob Dylan",
+            "Cae siete veces, levántate ocho. – Proverbio japonés",
+            "Haz lo necesario para lograr tu más ardiente deseo, y lo lograrás. – Ludwig van Beethoven",
+            "El aprendizaje nunca agota la mente. – Leonardo da Vinci",
+            "Cuando piensas en positivo, cosas buenas suceden. – Matt Kemp",
+            "Empieza donde estás, usa lo que tienes, haz lo que puedas. – Arthur Ashe"
+        ];
+
+        const numeroAleatorio = Math.floor(Math.random() * frases.length)
+
+        const [fraseMotivadora, autor] = frases[numeroAleatorio].split("-")
+
+        document.getElementById("frase").innerHTML = fraseMotivadora
+        document.getElementById("autor").innerHTML = autor
+        console.log(fraseMotivadora, autor)
+    }
 }
