@@ -77,9 +77,3 @@ img:hover {
   transform: scale(1.05);
   /* Agranda un 5% */
 }
-
-
-html {
-  filter: invert(1);
-
-}
