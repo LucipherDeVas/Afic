@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora de Notas</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 800px;
+      background-color: #2c2c2c;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.6);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #00bfff;
+    }
+    .nota-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+    label {
+      flex: 1 1 160px;
+      min-width: 130px;
+    }
+    input[type="text"] {
+      flex: 1 1 80px;
+      padding: 6px;
+      border-radius: 6px;
+      border: none;
+      text-align: center;
+      background-color: #444;
+      color: white;
+    }
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      background-color: #0078D4;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    .resultado {
+      background-color: #383838;
+      padding: 15px;
+      border-left: 4px solid #00bfff;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    .grupo {
+      margin-top: 20px;
+      border-top: 1px solid #444;
+      padding-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>📊 Calculadora de Notas</h2>
+
+    <div id="notas-container"></div>
+    <button onclick="agregarNota()">➕ Agregar Nota</button>
+
+    <div class="grupo">
+      <div class="nota-row">
+        <label for="nota-final">Nota Final (si ya la tienes):</label>
+        <input type="text" id="nota-final" placeholder="Ej: 5,5">
+      </div>
+
+      <div class="nota-row">
+        <label for="ponderacion-examen">Ponderación del examen (%):</label>
+        <input type="text" id="ponderacion-examen" value="30">
+      </div>
+
+      <button onclick="calcularPromedio()">📌 Calcular promedio actual</button>
+    </div>
+
+    <div class="grupo">
+      <div class="nota-row">
+        <label for="promedio-actual">Mi promedio actual:</label>
+        <input type="text" id="promedio-actual" placeholder="Ej: 4,5">
+        <label for="nota-final-aprobar">Ponderación examen (%):</label>
+        <input type="text" id="nota-final-aprobar" placeholder="Ej: 40">
+        <label for="nota-meta">Nota para aprobar:</label>
+        <input type="text" id="nota-meta" placeholder="Ej: 4,0">
+      </div>
+      <button onclick="calcularNotaNecesaria()">🎯 ¿Qué nota necesito en el examen?</button>
+    </div>
+
+    <div class="resultado" id="resultado"></div>
+    <div class="resultado" id="resultado-final"></div>
+  </div>
+
+  <script>
+    let contador = 0;
+
+    function parseDecimal(valor) {
+      return parseFloat(valor.replace(",", ".")) || 0;
+    }
+
+    function agregarNota() {
+      const container = document.getElementById('notas-container');
+      const div = document.createElement('div');
+      div.className = 'nota-row';
+      div.innerHTML = `
+        <label>Nota ${contador + 1}:</label>
+        <input type="text" class="nota" placeholder="Ej: 5,5">
+        <label>Porcentaje (%):</label>
+        <input type="text" class="peso" placeholder="Ej: 25">
+      `;
+      container.appendChild(div);
+      contador++;
+    }
+
+    function calcularPromedio() {
+      const notas = document.querySelectorAll('.nota');
+      const pesos = document.querySelectorAll('.peso');
+      let total = 0;
+      let sumaPesos = 0;
+
+      for (let i = 0; i < notas.length; i++) {
+        const nota = parseDecimal(notas[i].value);
+        const peso = parseDecimal(pesos[i].value);
+        total += nota * (peso / 100);
+        sumaPesos += peso;
+      }
+
+      const resultado = document.getElementById('resultado');
+      if (sumaPesos > 100) {
+        resultado.innerHTML = "❌ El total de porcentajes supera el 100%. Ajusta los valores.";
+      } else {
+        const promedioActual = total.toFixed(2).replace(".", ",");
+        resultado.innerHTML = `📌 Tu promedio actual es: <b>${promedioActual}</b>`;
+      }
+    }
+
+    function calcularNotaNecesaria() {
+      const promedio = parseDecimal(document.getElementById('promedio-actual').value);
+      const pesoExamen = parseDecimal(document.getElementById('nota-final-aprobar').value);
+      const meta = parseDecimal(document.getElementById('nota-meta').value);
+
+      const notaNecesaria = Math.ceil((meta - promedio * ((100 - pesoExamen) / 100)) / (pesoExamen / 100));
+      const resultadoFinal = document.getElementById('resultado-final');
+      resultadoFinal.innerHTML = `🎯 Necesitas un <b>${notaNecesaria}</b> en el examen final para aprobar el ramo con nota ${meta.toString().replace(".", ",")}.`;
+    }
+
+    agregarNota();
+    agregarNota();
+    agregarNota();
+  </script>
+</body>
+</html>

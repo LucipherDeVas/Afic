@@ -1,0 +1,351 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #1a1a1a;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    /* Espacio desde arriba */
+    min-height: 100vh;
+    /* Altura mínima, no fija */
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+button {
+    background: #00b894;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #019270;
+}
+
+.recompensa {
+    font-size: 22px;
+    background: #2d3436;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 500px;
+}
+
+textarea {
+    font-size: 15px;
+    background: #2d3436;
+    color: #dfe6e9;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 100%;
+    width: 500px;
+    height: 500px;
+    border: none;
+    resize: none;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+#maquinaExpendedora {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 10px auto;
+}
+
+#maquinaExpendedora:hover {
+    transform: scale(1.05);
+}
+
+#navegador {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 10px;
+}
+
+.contenedornav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+#logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+}
+
+#navegador-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#navegador-links li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#navegador-links li a:hover {
+    background-color: #00b894;
+    color: #1f1f1f;
+}
+
+.contenedor-boton-imagen {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.imagen-cuadro {
+    width: 100px;
+    height: 100px;
+    background-color: #2d3436;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+
+}
+
+.imagen-cuadro img {
+    max-width: 75%;
+    max-height: 75%;
+}
+
+.imagen-cuadro h4 {
+    margin: 0;
+}
+
+
+.misiones {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+
+.nivel1 {
+    background: #2d3436;
+    padding: 20px;
+    border-radius: 12px;
+    color: #f0f0f0;
+    font-size: 16px;
+    box-shadow: 0 0 20px rgba(0, 184, 68, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    flex-direction: column;
+}
+
+.nivel2 {
+    background: #2d3436;
+    padding: 20px;
+    border-radius: 12px;
+    color: #f0f0f0;
+    font-size: 16px;
+    box-shadow: 0 0 20px rgba(166, 184, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    flex-direction: column;
+}
+
+.nivel3 {
+    background: #2d3436;
+    padding: 20px;
+    border-radius: 12px;
+    color: #f0f0f0;
+    font-size: 16px;
+    box-shadow: 0 0 20px rgba(184, 138, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    flex-direction: column;
+}
+
+.nivel4 {
+    background: #2d3436;
+    padding: 20px;
+    border-radius: 12px;
+    color: #f0f0f0;
+    font-size: 16px;
+    box-shadow: 0 0 20px rgba(184, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    flex-direction: column;
+}
+
+.nivel5 {
+    background: #2d3436;
+    padding: 20px;
+    border-radius: 12px;
+    color: #f0f0f0;
+    font-size: 16px;
+    box-shadow: 0 0 20px rgba(184, 0, 178, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    flex-direction: column;
+}
+
+.nivel1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(0, 184, 68);
+}
+
+.nivel2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(166, 184, 0);
+}
+
+.nivel3:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(184, 138, 0);
+}
+
+.nivel4:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(184, 0, 0);
+}
+
+.nivel5:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(149, 0, 144);
+}
+
+.nivel1 h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.nivel2 h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.nivel3 h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.nivel4 h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.nivel5 h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.nivel1 p {
+    margin: 5px 0;
+}
+
+.nivel2 p {
+    margin: 5px 0;
+}
+
+.nivel3 p {
+    margin: 5px 0;
+}
+
+.nivel4 p {
+    margin: 5px 0;
+}
+
+.nivel5 p {
+    margin: 5px 0;
+}
+
+#tiempo1 {
+    margin-top: 100px;
+}
+
+#tiempo2 {
+    margin-top: 50px;
+}
+
+.botones-temporizador {
+    display: flex;
+    gap: 35px;
+    margin-top: 75px;
+}
+
+.tiempo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
